@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Iframe.</title>
+	<link rel="stylesheet" href="./script/style.css">
+
+
+
+</head>
+
+<body>
+	<!-- partial:index.partial.html -->
+
+	<canvas id="OutputCanvas" hidden></canvas>
+	<canvas id="FrameCanvas"></canvas>
+	<canvas id="PhotoCanvas" class="bgcan"></canvas>
+	<img id="FrameSRC" src="/ARTISTS/pop_art/keith_haring.png" hidden></img>
+
+
+	<label id="Upload" for="PhotoInput">IMAGE</label>
+	<label id="Loading" hidden>LOADING</label>
+	<input type="file" multiple="false" accept="image/*" id="PhotoInput" onchange="loadBackground()" hidden>
+
+
+	<!-- partial -->
+	<script src="./script/script.js"></script>
+
+</body>
+
+
+<script>
+
+
+</script>
+
+
+</html>
