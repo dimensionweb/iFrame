@@ -19,7 +19,7 @@ function loadBackground() {
   PhotoImg.drawTo(PhotoCanvas);
 
   //doGreenScreen
-  PhotoImg.onload = setTimeout(function () {
+  setTimeout(function () {
     doGreenScreen();
   }, 400);
 }
