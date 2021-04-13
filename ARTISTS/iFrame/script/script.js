@@ -5,22 +5,23 @@ window.onload = function () {
   var FrameImage = document.getElementById("FrameSRC");
   FrameImg = new SimpleImage(FrameImage);
   FrameImg.drawTo(FrameCanvas);
+  FrameImg.onload = document.getElementById("Upload").hidden = false;
 };
 
 function loadBackground() {
   //UI
   document.getElementById("Loading").hidden = false;
   document.getElementById("Upload").hidden = true;
-  
+
   var PhotoCanvas = document.getElementById("PhotoCanvas");
   var PhotoImage = document.getElementById("PhotoInput");
   PhotoImg = new SimpleImage(PhotoImage);
   PhotoImg.drawTo(PhotoCanvas);
 
   //doGreenScreen
-  setTimeout(function () {
+  PhotoImg.onload = setTimeout(function () {
     doGreenScreen();
-  }, 300);
+  }, 400);
 }
 
 function doGreenScreen() {

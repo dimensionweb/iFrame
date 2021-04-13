@@ -1,60 +1,66 @@
-var bgImg = null;
+var PhotoImg = null;
 
 window.onload = function () {
-  var fgCanvas = document.getElementById("fgcan");
-  //Get file input
-  var fgInput = document.getElementById("frame1");
-  fgImg = new SimpleImage(fgInput);
-  //Display image on canvas
-  fgImg.drawTo(fgCanvas);
+  var FrameCanvas = document.getElementById("FrameCanvas");
+  var FrameImage = document.getElementById("FrameSRC");
+  FrameImg = new SimpleImage(FrameImage);
+  FrameImg.drawTo(FrameCanvas);
+  FrameImg.onload = document.getElementById("Upload").hidden = false;
 };
 
-
 function loadBackground() {
-  var bgCanvas = document.getElementById("bgcan");
-  //Get file input
-  var bgInput = document.getElementById("bginput");
-  bgImg = new SimpleImage(bgInput);
-  //Display image on canvas
-  bgImg.drawTo(bgCanvas);
-  setTimeout(function () {
-    //process uploaded image
+  //UI
+  document.getElementById("Loading").hidden = false;
+  document.getElementById("Upload").hidden = true;
+
+  var PhotoCanvas = document.getElementById("PhotoCanvas");
+  var PhotoImage = document.getElementById("PhotoInput");
+  PhotoImg = new SimpleImage(PhotoImage);
+  PhotoImg.drawTo(PhotoCanvas);
+
+  //doGreenScreen
+  PhotoImg.onload = setTimeout(function () {
     doGreenScreen();
-  }, 5000);
+  }, 400);
 }
 
 function doGreenScreen() {
-  //Make greenscreen version
-  var output = new SimpleImage(fgImg.getWidth(), fgImg.getHeight());
-  for (var pixel of fgImg.values()) {
+  var output = new SimpleImage(FrameImg.getWidth(), FrameImg.getHeight());
+  for (var pixel of FrameImg.values()) {
     if (pixel.getGreen() > pixel.getRed() + pixel.getBlue()) {
-      var newPixel = bgImg.getPixel(pixel.getX(), pixel.getY());
+      var newPixel = PhotoImg.getPixel(pixel.getX(), pixel.getY());
       output.setPixel(pixel.getX(), pixel.getY(), newPixel);
     } else {
       output.setPixel(pixel.getX(), pixel.getY(), pixel);
     }
   }
   //Display new image on canvas
-  var outputCanvas = document.getElementById("outputcan");
+  var outputCanvas = document.getElementById("OutputCanvas");
   var outCtx = outputCanvas.getContext("2d");
   outCtx.clearRect(0, 0, outputCanvas.width, outputCanvas.height);
   output.drawTo(outputCanvas);
+
+  //UI
+  document.getElementById("FrameCanvas").hidden = true;
+  document.getElementById("PhotoCanvas").hidden = true;
+  document.getElementById("Loading").hidden = true;
+  document.getElementById("OutputCanvas").hidden = false;
 }
 
 function clearCanvases() {
-  var fgCanvas = document.getElementById("fgcan");
-  var bgCanvas = document.getElementById("bgcan");
-  var outputCanvas = document.getElementById("outputcan");
+  var FrameCanvas = document.getElementById("FrameCanvas");
+  var PhotoCanvas = document.getElementById("PhotoCanvas");
+  var OutputCanvas = document.getElementById("OutputCanvas");
   //Clear canvases
-  var fgCtx = fgCanvas.getContext("2d");
-  fgCtx.clearRect(0, 0, fgCanvas.width, fgCanvas.height);
-  var bgCtx = bgCanvas.getContext("2d");
-  bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
-  var outCtx = outputCanvas.getContext("2d");
-  outCtx.clearRect(0, 0, outputCanvas.width, outputCanvas.height);
+  var FrameCtx = FrameCanvas.getContext("2d");
+  FrameCtx.clearRect(0, 0, FrameCanvas.width, FrameCanvas.height);
+  var PhotoCtx = PhotoCanvas.getContext("2d");
+  PhotoCtx.clearRect(0, 0, PhotoCanvas.width, PhotoCanvas.height);
+  var OutCtx = OutputCanvas.getContext("2d");
+  OutCtx.clearRect(0, 0, OutputCanvas.width, OutputCanvas.height);
   //Reset image values to null
-  fgImg = null;
-  bgImg = null;
+  FrameImg = null;
+  PhotoImg = null;
   location.reload();
 }
 

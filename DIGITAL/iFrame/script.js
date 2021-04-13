@@ -12,14 +12,16 @@ function loadBackground() {
   //UI
   document.getElementById("Loading").hidden = false;
   document.getElementById("Upload").hidden = true;
-  
+
   var PhotoCanvas = document.getElementById("PhotoCanvas");
   var PhotoImage = document.getElementById("PhotoInput");
   PhotoImg = new SimpleImage(PhotoImage);
   PhotoImg.drawTo(PhotoCanvas);
 
   //doGreenScreen
-  PhotoImg.onload = setTimeout(function () {doGreenScreen();}, 400);
+  PhotoImg.onload = setTimeout(function () {
+    doGreenScreen();
+  }, 400);
 }
 
 function doGreenScreen() {
