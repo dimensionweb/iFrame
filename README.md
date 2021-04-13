@@ -1,7 +1,7 @@
 # iFrame
 
-Frames for Instagram.
+Frames for Instagram ♡
 
-app: dimensionweb.github.io/iFrame
+💻 app: https://www.dimensionweb.github.io/iFrame
 
-https://www.buymeacoffee.com/DimensionStudio
+☕ https://www.buymeacoffee.com/DimensionStudio
