@@ -21,7 +21,7 @@ function loadBackground() {
   //doGreenScreen
   setTimeout(function () {
     doGreenScreen();
-  }, 400);
+  }, 1000);
 }
 
 function doGreenScreen() {
