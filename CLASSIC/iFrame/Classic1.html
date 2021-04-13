@@ -13,14 +13,13 @@
 
 <body>
 	<!-- partial:index.partial.html -->
-
 	<canvas id="OutputCanvas" hidden></canvas>
 	<canvas id="FrameCanvas"></canvas>
 	<canvas id="PhotoCanvas" class="bgcan"></canvas>
 	<img id="FrameSRC" src="/iFrame/CLASSIC/Classic1.png" hidden></img>
 
-
-	<label id="Upload" for="PhotoInput">IMAGE</label>
+	
+	<label id="Upload" for="PhotoInput" hidden>UPLOAD</label>
 	<label id="Loading" hidden>LOADING</label>
 	<input type="file" multiple="false" accept="image/*" id="PhotoInput" onchange="loadBackground()" hidden>
 
