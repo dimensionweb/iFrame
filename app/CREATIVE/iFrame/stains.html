@@ -8,26 +8,31 @@
 	<script src="/iFrame/app/script/iframe.script.js"></script>
 
 
-
 </head>
 
 <body>
 	<!-- partial:index.partial.html -->
 
-	<canvas id="outputcan"></canvas>
-	<canvas id="fgcan" hidden></canvas>
-	<canvas id="bgcan" hidden></canvas>
-	<img id="frame1" src="/iFrame/app/CREATIVE/flowers.png" hidden></img>
+	<canvas id="OutputCanvas" hidden></canvas>
+	<canvas id="FrameCanvas"></canvas>
+	<canvas id="PhotoCanvas" class="bgcan"></canvas>
+	<img id="FrameSRC" src="/iFrame/app/CREATIVE/stains.jpeg" hidden></img>
 
 
-	<label for="bginput">IMAGE</label>
+	<label id="Upload" for="PhotoInput">IMAGE</label>
+	<label id="Loading" hidden>LOADING</label>
+	<input type="file" multiple="false" accept="image/*" id="PhotoInput" onchange="loadBackground()" hidden>
 
-
-	<input type="file" multiple="false" accept="image/*" id="bginput" onchange="loadBackground()" hidden>
-	
 
 	<!-- partial -->
 
 </body>
+
+
+<script>
+
+
+</script>
+
 
 </html>
