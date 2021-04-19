@@ -38,14 +38,11 @@ label {
   z-index: 1;
 }
 
- #Upload {
+.image-upload>input {
+  display: none;
   position: relative;
   margin-top: -680px;
   z-index: 0;
-}
-
-.image-upload>input {
-  display: none;
 }
 
 body {
