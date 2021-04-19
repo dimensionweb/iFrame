@@ -44,6 +44,10 @@ label {
   z-index: 0;
 }
 
+.image-upload>input {
+  display: none;
+}
+
 body {
   display: grid;
   grid-template-rows: auto;
