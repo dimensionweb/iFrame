@@ -39,7 +39,6 @@ label {
 }
 
 .image-upload>input {
-  display: none;
   z-index: 0;
 }
 
