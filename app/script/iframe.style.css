@@ -39,8 +39,7 @@ label {
 }
 
 .image-upload>input {
-  position: relative;
-  margin-top: -680px;
+  display: none;
   z-index: 0;
 }
 
