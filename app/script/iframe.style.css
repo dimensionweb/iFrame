@@ -40,6 +40,8 @@ label {
 
  #Upload {
   position: relative;
+  margin-top: -680px;
+  z-index: 1;
 }
 
 body {
