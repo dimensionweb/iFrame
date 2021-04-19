@@ -30,17 +30,9 @@ body {
   height: 600px;
 }
 
-label {
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(0, 0, 0);
-  margin-top: -680px;
-  font-size: 20px;
-  z-index: 1;
-}
-
 .image-upload>input {
   position: relative;
-  margin-top: -480px;
+  margin-top: -280px;
   z-index: -1;
 }
 
