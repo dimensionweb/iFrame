@@ -31,8 +31,8 @@ body {
 }
 
 .image-upload>input {
-  position: absolute;
-  margin: center;
+  position: relative;
+  margin-top: -110px;
   z-index: -1;
 }
 
