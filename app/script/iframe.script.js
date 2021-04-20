@@ -5,7 +5,7 @@ window.onload = function () {
   var FrameImage = document.getElementById("FrameSRC");
   FrameImg = new SimpleImage(FrameImage);
   FrameImg.drawTo(FrameCanvas);
-  FrameImg.onload = document.getElementById("Upload").hidden = false;
+  FrameImg.onload = document.getElementById("image-upload").hidden = false;
 };
 
 function loadBackground() {
